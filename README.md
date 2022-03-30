@@ -71,7 +71,7 @@ DBUtil
 
 ##### 메뉴에서 공지사항을 클릭하면 게시글 목록이 뜹니다.
 
-<img src = "/uploads/435942be056ea9e1df70317789d0744b/image.png" width="500" height="300"/>
+![image](/uploads/435942be056ea9e1df70317789d0744b/image.png) 
 
 
 
@@ -85,7 +85,8 @@ DBUtil
 ![image](/uploads/cd5059646917fedbea2a3aeafe0ebe25/image.png)
 
 ##### 글을 삭제할 수 있습니다. 
-![image](/uploads/b0709c781c497bfa2b3987bab0cfb9fe/image.png)
+<img src = "/uploads/b0709c781c497bfa2b3987bab0cfb9fe/image.png" width="400" height="300"/>
+
 
 ##### 글을 수정할 수 있습니다.
 ![image](/uploads/7eba9bf7c56db155585e30b7bb3286d7/image.png)
