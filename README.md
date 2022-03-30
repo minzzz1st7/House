@@ -19,7 +19,7 @@ houseDao.java
 houseDaoImpl.java  
 houseDto.java  
 
-> Controller
+> Controller    
 HouseDealServlet.java   
 MainServlet.java    
 MemberServlet.java  
@@ -27,41 +27,41 @@ NoticeMain.java
 userMain.java   
  
 
-> Dao
-UserDao
-UserDaoImpl
-StoreDao
-StoreDaoImpl
-NoticeDao
-NoticeDaoImpl
-HouseDealDao
-HouseDealDaoImpl
-EnvDao
-EnvDaoImpl
+> Dao   
+UserDao 
+UserDaoImpl 
+StoreDao    
+StoreDaoImpl    
+NoticeDao   
+NoticeDaoImpl   
+HouseDealDao    
+HouseDealDaoImpl    
+EnvDao  
+EnvDaoImpl  
 
-> Dto
-UserDto
-StoreDto
-NoticeDto
-ListParameterDto
-HouseDealDto
-EnvDto
+> Dto   
+UserDto 
+StoreDto    
+NoticeDto   
+ListParameterDto    
+HouseDealDto    
+EnvDto  
 
-> Service
-UserService
-UserServiceImpl
-StoreServcie
-StoreServcieImpl
-NoticeService
-NoticeServiceImpl
-HouseDealService
-HouseDealServiceImpl
-EnvService
-EnvServiceImpl
+> Service   
+UserService 
+UserServiceImpl 
+StoreServcie    
+StoreServcieImpl    
+NoticeService   
+NoticeServiceImpl   
+HouseDealService    
+HouseDealServiceImpl    
+EnvService  
+EnvServiceImpl  
 
->  util
-PageNavigation
-DBUtil
+>  util 
+PageNavigation  
+DBUtil  
 
 
 ---
