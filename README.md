@@ -3,6 +3,48 @@
 
 ### 환경 설정:
 
+---
+# 요구사항 목록
+
+
+---
+# Usecase Diagram
+![image](/uploads/73ba72adb1eff0a29d5cf7de05240ab2/image.png)
+
+---
+# 디렉토리
+
+## Controller
+ ### HouseDealServlet
+ ### MainServlet
+ ### MemberServlet
+ ### NoticeMain
+ ### userMain
+
+## Dao
+### UserDao
+### UserDaoImpl
+### StoreDao
+### StoreDaoImpl
+### NoticeDao
+### NoticeDaoImpl
+### HouseDealDao
+### HouseDealDaoImpl
+### EnvDao
+### EnvDaoImpl
+
+## Dto
+## Service
+## util
+
+
+
+---
+# 테이블 설계
+
+
+---
+# 실행화면
 
 ---
 # 공지사항
