@@ -9,7 +9,7 @@
 
 ---
 # Usecase Diagram
-<img src = "/uploads/73ba72adb1eff0a29d5cf7de05240ab2/image.png" width="10" height="10"/>
+<img src = "/uploads/73ba72adb1eff0a29d5cf7de05240ab2/image.png" width="200" height="700"/>
 
 ---
 # 디렉토리
