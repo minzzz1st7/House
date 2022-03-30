@@ -14,8 +14,8 @@
 ---
 # 디렉토리
 
-> **Controller**    
-HouseDealServlet.java   
+## Controller    
+>HouseDealServlet.java   
 MainServlet.java    
 MemberServlet.java  
 NoticeMain.java 
