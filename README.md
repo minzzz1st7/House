@@ -27,7 +27,7 @@
 
 
 # Usecase Diagram
-<img src = "/uploads/73ba72adb1eff0a29d5cf7de05240ab2/image.png" width="500" height="1000"/>
+<img src = "/uploads/73ba72adb1eff0a29d5cf7de05240ab2/image.png" width="700" height="1000"/>
 
 
 
