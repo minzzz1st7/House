@@ -14,12 +14,7 @@
 ---
 # 디렉토리
 
-> 실거래가 정보  
-houseDao.java  
-houseDaoImpl.java  
-houseDto.java  
-
-> Controller    
+> **Controller**    
 HouseDealServlet.java   
 MainServlet.java    
 MemberServlet.java  
