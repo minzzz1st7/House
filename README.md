@@ -19,7 +19,7 @@ houseDao.java
 houseDaoImpl.java  
 houseDto.java  
 
-> Controller
+> 컨트롤러
 HouseDealServlet.java
 MainServlet.java
 MemberServlet.java
