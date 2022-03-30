@@ -9,7 +9,7 @@
 
 ---
 # Usecase Diagram
-<img src = "/uploads/73ba72adb1eff0a29d5cf7de05240ab2/image.png" width="200" height="700"/>
+<img src = "/uploads/73ba72adb1eff0a29d5cf7de05240ab2/image.png" width="500" height="1000"/>
 
 ---
 # 디렉토리
@@ -71,7 +71,8 @@ DBUtil
 
 ##### 메뉴에서 공지사항을 클릭하면 게시글 목록이 뜹니다.
 
-![image](/uploads/435942be056ea9e1df70317789d0744b/image.png)
+<img src = "/uploads/435942be056ea9e1df70317789d0744b/image.png" width="500" height="300"/>
+
 
 
 ##### 게시글을 등록할 수 있습니다.
