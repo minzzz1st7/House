@@ -20,9 +20,9 @@ houseDaoImpl.java
 houseDto.java  
 
 > Controller
-> HouseDealServlet.java
-> MainServlet.java
-> MemberServlet.java
+>> HouseDealServlet.java
+>> MainServlet.java
+>> MemberServlet.java
 > NoticeMain.java
 > userMain.java
  
