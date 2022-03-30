@@ -14,7 +14,7 @@
 ---
 # 디렉토리
 
-> ##Controller    
+> **Controller**    
 HouseDealServlet.java   
 MainServlet.java    
 MemberServlet.java  
@@ -22,7 +22,7 @@ NoticeMain.java
 userMain.java   
  
 
-> Dao   
+> **Dao**   
 UserDao 
 UserDaoImpl 
 StoreDao    
@@ -34,7 +34,7 @@ HouseDealDaoImpl
 EnvDao  
 EnvDaoImpl  
 
-> Dto   
+> **Dto**   
 UserDto 
 StoreDto    
 NoticeDto   
@@ -42,7 +42,7 @@ ListParameterDto
 HouseDealDto    
 EnvDto  
 
-> Service   
+> **Service**   
 UserService 
 UserServiceImpl 
 StoreServcie    
@@ -54,7 +54,7 @@ HouseDealServiceImpl
 EnvService  
 EnvServiceImpl  
 
->  util 
+> **util** 
 PageNavigation  
 DBUtil  
 
