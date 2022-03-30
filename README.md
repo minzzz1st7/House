@@ -19,12 +19,12 @@ houseDao.java
 houseDaoImpl.java  
 houseDto.java  
 
-> 컨트롤러
-HouseDealServlet.java
-MainServlet.java
-MemberServlet.java
-NoticeMain.java
-userMain.java
+> Controller
+ HouseDealServlet.java
+ MainServlet.java
+ MemberServlet.java
+ NoticeMain.java
+ userMain.java
 
 > Dao
 UserDao
