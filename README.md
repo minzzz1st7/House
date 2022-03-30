@@ -85,14 +85,14 @@ DBUtil
 ![image](/uploads/cd5059646917fedbea2a3aeafe0ebe25/image.png)
 
 ##### 글을 삭제할 수 있습니다. 
-<img src = "/uploads/b0709c781c497bfa2b3987bab0cfb9fe/image.png" width="500" height="400"/>
+<img src = "/uploads/b0709c781c497bfa2b3987bab0cfb9fe/image.png" width="800" height="400"/>
 
 
 ##### 글을 수정할 수 있습니다.
-<img src = "/uploads/7eba9bf7c56db155585e30b7bb3286d7/image.png" width="500" height="400"/>
+<img src = "/uploads/7eba9bf7c56db155585e30b7bb3286d7/image.png" width="800" height="400"/>
 
 ##### 수정 후 변경된 목록 화면
-<img src = "/uploads/5e976a8d8ec988d39791a21f2c530ae4/image.png" width="500" height="400"/>
+<img src = "/uploads/5e976a8d8ec988d39791a21f2c530ae4/image.png" width="800" height="400"/>
 
 
 
