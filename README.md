@@ -21,9 +21,6 @@
 #### - 웹페이지
 ![image](/uploads/c19b0ccbc114183b8c1f450ecbe7eccc/image.png)
 
-#### - 서버코드 
-![image](/uploads/5e84383d0780542d9503b3a8e428b2b6/image.png)
-![image](/uploads/53b7346226d9e837034caf1890bb1dba/image.png)
 
 ### - 게시글을 등록하면 게시글 목록에서 확인할 수 있습니다. 
 ![image](/uploads/cd5059646917fedbea2a3aeafe0ebe25/image.png)
@@ -32,15 +29,11 @@
 #### - 웹페이지
 ![image](/uploads/b0709c781c497bfa2b3987bab0cfb9fe/image.png)
 
-#### - 서버코드 
-![image](/uploads/78f2d4373ee5c5174b5ca80a616ba09c/image.png)
-![image](/uploads/1e7269a8a5a9fcfdc111ceab27de8ad7/image.png)
 
 ### - 글을 수정할 수 있습니다.
 #### - 웹페이지
 ![image](/uploads/7eba9bf7c56db155585e30b7bb3286d7/image.png)
-#### - 서버코드 
-![image](/uploads/57d1a43d9a797e175deb54cab5f08f48/image.png)
+
 ### - 수정 후 변경된 목록 화면
 ![image](/uploads/5e976a8d8ec988d39791a21f2c530ae4/image.png)
 
