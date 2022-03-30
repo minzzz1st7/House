@@ -1,20 +1,30 @@
 # HappyHouse_Backend_부울경_4반_김수진_정민지
 
-## JDBC 
-
-실거래가, 관심지역는 API 를 불러와서 데이터를 insert 합니다. 
-
-uesrInfo, 안전병원, 동네 업종 정보 데이터 관리, 
-동네 환경 점검 정보 관리, 기관지 정문 병원 정보 데이터 관리, 국가 안심 병원 정보 데이터 관리, 회원 정보 데이터 관리
-동네 환경 점검 정보 관리, 기관지 정문 병원 정보 데이터 관리, 국가 안심 병원 정보 데이터 관리, 회원 정보 데이터 관리
-는 sql을 통해서 data를 insert 합니다. 
 
 ### 환경 설정:
-1. JDBC main 파일을 시작하기 전에 첨부한 sql을 실행해야 합니다.
-2. util.DBConnection 에 있는 dbName 을 자신의 DB에 맞게 설정해야 합니다.
+
 
 ---
-# 아파트 매매 실거래가 데이터 관리, 관심지역 데이터 관리
+# 공지사항
+
+### - 메뉴에서 공지사항을 클릭하면 게시글 목록이 뜹니다.
+![image](/uploads/435942be056ea9e1df70317789d0744b/image.png)
+
+### - 게시글을 등록할 수 있습니다.
+![image](/uploads/c19b0ccbc114183b8c1f450ecbe7eccc/image.png)
+
+### - 게시글을 등록하면 게시글 목록에서 확인할 수 있습니다. 
+![image](/uploads/cd5059646917fedbea2a3aeafe0ebe25/image.png)
+
+### - 글을 삭제할 수 있습니다. 
+![image](/uploads/b0709c781c497bfa2b3987bab0cfb9fe/image.png)
+
+### - 글을 수정할 수 있습니다.
+![image](/uploads/7eba9bf7c56db155585e30b7bb3286d7/image.png)
+
+### - 수정 후 변경된 목록 화면
+![image](/uploads/5e976a8d8ec988d39791a21f2c530ae4/image.png)
+
 
 **getApartInfoFromApi** 클래스 에서는 아파트 상세거래 API 를 통해 API 정보를 가져옵니다.
 
