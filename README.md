@@ -24,13 +24,6 @@
 |회원관리||
 
 
-
-
-# Usecase Diagram
-<img src = "/uploads/73ba72adb1eff0a29d5cf7de05240ab2/image.png" width="800" height="1800"/>
-
-
-
 # 디렉토리
 
 ##### Controller    
@@ -76,6 +69,13 @@ EnvServiceImpl
 ##### Util
 >PageNavigation  
 DBUtil  
+
+
+
+
+# Usecase Diagram
+<img src = "/uploads/73ba72adb1eff0a29d5cf7de05240ab2/image.png" width="800" height="2000"/>
+
 
 
 
