@@ -206,7 +206,7 @@ DBUtil
 #### 1. 메뉴에서 공지사항을 클릭하면 게시글 목록이 뜹니다.
 
 - myNotice
-<img src = "/uploads/435942be056ea9e1df70317789d0744b/image.png" width="600" height="300"/>
+<img src = "/uploads/84e246a1b9bc7777313cd2902bb0924d/image.png" width="600" height="300"/>
 
 #### 2. 게시글을 등록할 수 있습니다.
 
@@ -215,23 +215,19 @@ DBUtil
 - Noticeinsert
 <img src = "/uploads/c19b0ccbc114183b8c1f450ecbe7eccc/image.png" width="600" height="300"/>
 
+#### 3. 제목을 누르면 게시글 확인 할 수 있습니다. 
+<img src = "/uploads/1dec8fa334faa945c8d7ac8e28f250c9/image.png" width="600" height="300"/>
 
-->**게시글 등록 후 목록 화면**
-<img src = "/uploads/cd5059646917fedbea2a3aeafe0ebe25/image.png" width="600" height="300"/>
 
-#### 3. 게시글을 삭제할 수 있습니다. 
+#### 4. 게시글을 삭제할 수 있습니다. 
 - Noticedelete
-<img src = "/uploads/b0709c781c497bfa2b3987bab0cfb9fe/image.png" width="600" height="300"/>
+<img src = "/uploads/1dec8fa334faa945c8d7ac8e28f250c9/image.png" width="600" height="300"/>
 
-#### 4. 게시글을 수정할 수 있습니다.
-
+#### 5. 게시글을 수정할 수 있습니다.
 
 ->**글 수정화면**
 - Noticeupdate
-<img src = "/uploads/7eba9bf7c56db155585e30b7bb3286d7/image.png" width="600" height="300"/>
-
-->**수정 후 변경된 목록 화면**
-<img src = "/uploads/5e976a8d8ec988d39791a21f2c530ae4/image.png" width="600" height="300"/>
+<img src = "uploads/afdadb8a88e43a6f60d4dadad04711f9/image.png" width="600" height="300"/>
 
 
 
