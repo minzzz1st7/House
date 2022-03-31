@@ -4,14 +4,12 @@
 
 $(document).ready(function () {
   function mapMarking(infoList) {
-	
-	/*도로명으로 검색*/
     var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
       mapOption = {
         center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
         level: 3 // 지도의 확대 레벨
       };
-	//도로명 아파트명 가격
+
     let roadNameList = infoList[0];
     let apartList = infoList[1];
     let priceList = infoList[2];
@@ -34,7 +32,7 @@ $(document).ready(function () {
           });
 
           // 인포윈도우로 장소에 대한 설명을 표시합니다
-          let mark = '<div style="width:150px;text-align:center;padding:6px 0;">${apartList[i] + "\n거래가: " + priceList[i]}</div>';
+          let mark = `<div style="width:150px;text-align:center;padding:6px 0;">${apartList[i] + "\n거래가: " + priceList[i]}</div>`;
           var infowindow = new kakao.maps.InfoWindow({
             content: mark
           });
@@ -59,7 +57,7 @@ $(document).ready(function () {
     var LAWD_CD = $(`#sido`).val() + $(`#sigugun`).val();
     var contractDay = document.getElementById("contractDay");//'202002';
     var DEAL_YMD = contractDay.value;//'202002'; // 요건 어떻게 할까?
-	
+
     // server에서 넘어온 data
     $.ajax({
       url: 'http://openapi.molit.go.kr/OpenAPI_ToolInstallPackage/service/rest/RTMSOBJSvc/getRTMSDataSvcAptTradeDev',
@@ -102,7 +100,6 @@ $(document).ready(function () {
   }
 
   function makeList2(data) {
-	// xml 파일들로 리스트 만드는 작업
     let aptlist = ``;
     let dong = document.getElementById("dong").value.trim();//'익선동';
     //let apartment = document.getElementById("apartment").value;//'202002';

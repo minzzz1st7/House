@@ -23,6 +23,8 @@ public class HouseDealDaoImpl implements HouseDealDao {
 		return memberDao;
 	}
 	
+	
+	
 	@Override
 	public List<HouseDealDto> searchByRegion(String si, String gugun, String dong) {
       List<HouseDealDto> houseDealDtoList = new ArrayList<HouseDealDto>();
@@ -78,12 +80,14 @@ public class HouseDealDaoImpl implements HouseDealDao {
           String sigugun = si+gugun;
           String sql = "select * \n";
           sql += "from housedeal \n";
-          sql += "where dong = ? && LAWD_CD= ?";
+          sql += "where LAWD_CD= ? && dong like ?";
           pstmt = conn.prepareStatement(sql);
-          pstmt.setString(1, dongName);
-          pstmt.setString(2, sigugun);
+			/* pstmt.setString(1, dongName); */
+          dong="%"+dong.charAt(0)+dong.charAt(1)+"%";
+          pstmt.setString(1, sigugun);
+          pstmt.setString(2, dong);
 
-          
+
           rs = pstmt.executeQuery();
           try {
               while (rs.next()) {
@@ -100,6 +104,11 @@ public class HouseDealDaoImpl implements HouseDealDao {
                   houseDealDto.setBuildYear(rs.getString("buildYear"));
                   houseDealDto.setLAWD_CD(rs.getString("LAWD_CD"));
                   houseDealDto.setFloor(rs.getString("floor"));
+                  houseDealDto.setRoadName(rs.getString("roadName"));
+                  houseDealDto.setJiBun(rs.getString("jiBun"));
+                  houseDealDto.setBunCode(rs.getString("bunCode"));
+                  houseDealDto.setBuBunCode(rs.getString("buBunCode"));
+                  houseDealDto.setGuGunCode(rs.getString("guGunCode"));
                   houseDealDtoList.add(houseDealDto);
               }
           } catch (SQLException e) {
@@ -146,6 +155,11 @@ public class HouseDealDaoImpl implements HouseDealDao {
                     houseDealDto.setBuildYear(rs.getString("buildYear"));
                     houseDealDto.setLAWD_CD(rs.getString("LAWD_CD"));
                     houseDealDto.setFloor(rs.getString("floor"));
+                    houseDealDto.setRoadName(rs.getString("roadName"));
+                    houseDealDto.setJiBun(rs.getString("jiBun"));
+                    houseDealDto.setBunCode(rs.getString("bunCode"));
+                    houseDealDto.setBuBunCode(rs.getString("buBunCode"));
+                    houseDealDto.setGuGunCode(rs.getString("guGunCode"));
 
                     houseDealDtoList.add(houseDealDto);
                 }

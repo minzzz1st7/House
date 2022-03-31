@@ -1,378 +1,214 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="root" value="${pageContext.request.contextPath}"></c:set>
+<script type="text/javascript"
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5604814141adf4eb08f174929c528f6e&libraries=services"></script>
+<%@ include file="header.jsp"%>
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8" />
-<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-<title>Squadfree Bootstrap Template - Index</title>
-<meta content="" name="description" />
-<meta content="" name="keywords" />
+<c:if test="${empty userInfo}">
+   <script>
+   alert("로그인 상태에서 볼 수 있는 페이지입니다.");
+   location.href = "${root}/index.jsp";
+   </script>
+</c:if> 
 
-<!-- Favicons -->
-<link href="assets/img/favicon.png" rel="icon" />
-<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
-
-<!-- Google Fonts -->
-<link
-	href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-	rel="stylesheet" />
-
-<!-- Vendor CSS Files -->
-<link href="assets/vendor/aos/aos.css" rel="stylesheet" />
-<link href="assets/vendor/bootstrap/css/bootstrap.min.css"
-	rel="stylesheet" />
-<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
-	rel="stylesheet" />
-<link href="assets/vendor/boxicons/css/boxicons.min.css"
-	rel="stylesheet" />
-<link href="assets/vendor/glightbox/css/glightbox.min.css"
-	rel="stylesheet" />
-<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
-
-<!-- Template Main CSS File -->
-<link href="assets/css/custom.css" rel="stylesheet" />
-<link href="assets/css/interest.css" rel="stylesheet" />
-<link href="assets/css/listMap.css" rel="stylesheet" />
-<link href="assets/css/myPage.css" rel="stylesheet" />
-<link href="assets/css/notice.css" rel="stylesheet" />
-<link href="assets/css/register.css" rel="stylesheet" />
-<link href="assets/css/registerInterest.css" rel="stylesheet" />
-<link href="assets/css/style.css" rel="stylesheet" />
-<link href="assets/css/transaction.css" rel="stylesheet" />
-
-<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<!-- =======================================================
-  * Template Name: Squadfree - v4.7.0
-  * Template URL: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 <script type="text/javascript">
+
+
 	$(document).ready(function() {
-		$("#searchAptBtn").click(function() {
-			console.log("hi");
-			$("#transactionFormApt").attr("action", "${root}/houseDeal").submit();
-		})
+
+		function mapMarking(infoList) {
+			var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+				mapOption = {
+					center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+					level: 3 // 지도의 확대 레벨
+				};
+
+			let roadNameList = infoList[0];
+			let priceList = infoList[1];
+			let apartList = infoList[2];
+			// 지도를 생성합니다    
+			var map = new kakao.maps.Map(mapContainer, mapOption);
+
+			// 주소-좌표 변환 객체를 생성합니다
+			var geocoder = new kakao.maps.services.Geocoder();
+			for (let i = 0; i < roadNameList.length; ++i) {
+				// 주소로 좌표를 검색합니다
+				geocoder.addressSearch(roadNameList[i], function (result, status) {
+
+					// 정상적으로 검색이 완료됐으면 
+					if (status === kakao.maps.services.Status.OK) {
+						var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+						// 결과값으로 받은 위치를 마커로 표시합니다
+						let mark = "<div>"+apartList[i]+"<br>"+priceList[i]+"</div>";
+						let title = apartList[i]+"\n" +priceList[i];
+						var marker = new kakao.maps.Marker({
+							map: map,
+							position: coords,
+							title:title
+						});
+						
+						// 인포윈도우로 장소에 대한 설명을 표시합니다
+/* 
+						var infowindow = new kakao.maps.InfoWindow({
+							content:mark
+						});
+						infowindow.open(map, marker);
+ */
+						// 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+						map.setCenter(coords);
+						
+					}
+				});
+				
+				
+			}
+		};
+
+		
+		
+		$("#searchBtn").click(function () {
+			let roadNameList = []; 
+			let priceList = [];
+			let apartList = [];
+			let areaList = [];
+			let nowIndex = 0;
+			
+			var aptName = $("#aptName").val();
+			$.ajax({
+				type:'get',
+	            url:'houseDeal',	
+	           	data: {
+	           		act:"searchByApt",
+	           		aptName:aptName,
+					},
+				dataType:'text',
+	            success: function(data, textStatus) {
+	            	// console.log(JSON.parse(data)); 	// String을 JSON으로
+	            	var res = JSON.parse(data);
+	             	var tbodyEl = $("#storeinfo-tbody");
+	            	var theadEl = $("#storeinfo-thead");
+	            	theadEl.empty();
+	            	theadEl.append("<tr><th>도로명</th><th>지역크기</th><th>가격</th><th>아파트명</th></tr>");
+	            	var str ="";
+	            	var infoList=[]
+					for( item in res ){
+						
+						console.log(res[item].cityName)
+						let fullName = makeRoadName(res[item].roadName,res[item].bunCode,res[item].buBunCode)
+	            		console.log("fullName");
+						console.log(fullName);
+						roadNameList.push(fullName);
+						areaList.push(res[item].area);
+						priceList.push(res[item].dealAmount);
+						apartList.push(res[item].aptName);
+						
+						
+	            		str += "<tr>";
+	            		str += "<td>"+res[item].roadName+"</td>";
+	            		str += "<td>"+res[item].area+"</td>";
+						str += "<td>"+res[item].dealAmount+"</td>";
+						str += "<td>"+res[item].aptName+"</td>";
+						str += "</tr>";
+						
+	            	}
+	            	tbodyEl.empty().append(str);
+	            	mapMarking([roadNameList, priceList, apartList]);
+
+	            },
+	            error:function (data, textStatus) {
+	                console.log(data);
+	            }
+			})
+			/* mapMarking(roadNameList); */
+		});
+		
+
+		  function getRoadNameNum(fullRoadNameNum) {
+			    let shortRoadNameNum = ""
+			    let continueFlag = true;
+			    if(fullRoadNameNum ==null){
+			    	return;
+			    }
+			    for (let i = 0; i < fullRoadNameNum.length; ++i) {
+			      if (continueFlag && fullRoadNameNum[i] == '0') {
+			        continue;
+			      }
+			      else {
+			        continueFlag = false;
+			        shortRoadNameNum += fullRoadNameNum[i];
+			      }
+			    }
+			    if (shortRoadNameNum == "") {
+			      shortRoadNameNum = "0";
+			    }
+			    return shortRoadNameNum;
+			  }
+			
+			  function makeRoadName(roadName,bunCode,buBunCode) {
+				  let fullName = roadName + " " + getRoadNameNum(bunCode) + "-" + getRoadNameNum(buBunCode);
+				  return fullName;
+			}
 
 	});
 </script>
 
-
-</head>
-
-<body>
-	<!-- ======= Header ======= -->
-	<header id="header" class="fixed-top">
-		<div class="container d-flex align-items-center">
-			<div class="logo me-auto">
-				<h1 class="text-light">
-					<a href="index.html"><span>Happy<span id="logo-a "
-							style="color: rgb(217, 219, 252); font-size: 26px">House</span></span></a>
-				</h1>
-				<!-- Uncomment below if you prefer to use an image logo -->
-				<!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-			</div>
-
-			<nav id="navbar" class="navbar order-last order-lg-0">
-				<ul>
-					<li><a class="nav-link scrollto" href="index.html#hero">Home</a></li>
-					<li><a class="nav-link scrollto" href="index.html#services">회사
-							소개</a></li>
-					<li><a class="nav-link scrollto" href="notice.html">공지사항</a></li>
-					<li><a class="nav-link scrollto findTrans"
-						href="findTransaction.html">주택실거래가조회</a></li>
-					<!-- 로그인 안 한 상태 inactive -->
-					<li class="dropdown findTrans"><a href="findTransaction.html"><span>관심지역조회</span>
-							<i class="bi bi-chevron-down"></i></a>
-						<ul>
-							<li><a href="registerInterest.html">관심 지역 등록</a></li>
-							<li><a href="interest.html">주변탐방 업종 정보 조회</a></li>
-						</ul></li>
-					<li><a class="nav-link scrollto findTrans"
-						href="findHospital.html".html">안심병원 조회</a></li>
-				</ul>
-				<i class="bi bi-list mobile-nav-toggle"></i>
-			</nav>
-
-			<div class="dropdown dropdown-menu-right info-btn-container">
-				<a class="log-btn dropdown-toggle btn-default btn-sm flip"
-					data-bs-toggle="dropdown"> 회원 정보 </a>
-				<div
-					class="dropdown-menu dropdown-menu-end dropdown-animation panel form info-container show"
-					style="display: none">
-					<a class="mypage-btn" href="myPage.html">MyPage</a>
-					<button class="btn mypage-btn" onclick="logout()" type="button">Logout</button>
-				</div>
-			</div>
-
-			<div class="dropdown dropdown-menu-right log-btn-container">
-				<a class="log-btn dropdown-toggle btn-default btn-sm flip"
-					data-bs-toggle="dropdown"> Login </a>
-				<div
-					class="dropdown-menu dropdown-menu-end dropdown-animation panel form show"
-					style="display: none">
-					<form name="login-form" class="login-form">
-						<h2>Login</h2>
-						<div class="txtb">
-							<input id="id" name="id" type="text" /> <span
-								data-placeholder="ID"></span>
-						</div>
-						<div class="txtb">
-							<input id="password" name="password" type="password" /> <span
-								data-placeholder="Password"></span>
-						</div>
-						<button class="login-btn" onclick="login()" type="button">Login</button>
-						<div class="bottom-text">
-							<p class="mt-2 mb-2">
-								Don’t have account ? <a href="register.html">Sign up</a> <br />
-							</p>
-							<p class="mt-2 mb-2">
-								Forget your password ? <a href="findPwd.html">Find Password</a>
-							</p>
-						</div>
-					</form>
-				</div>
-			</div>
-
-			<!-- .navbar -->
-		</div>
-	</header>
-	<!-- End Header -->
-	<main id="main">
-		<!-- ======= Breadcrumbs Section ======= -->
-		<section class="breadcrumbs">
-			<div class="container">
-				<div class="d-flex justify-content-between align-items-center">
-					<h2>실거래가 조회</h2>
-					<ol>
-						<li><a href="index.html">Home</a></li>
-						<li>실거래가 조회</li>
-					</ol>
-				</div>
-			</div>
-		</section>
-		<!-- Breadcrumbs Section -->
-
-		<!-- ======= Portfolio Details Section ======= -->
-
-
-			<form id="transactionFormApt" class="text-left mb-3" method="post"
-		action="">
-		<input type="hidden" name="act" id="act" value="searchByApt">
-		<div class="form-group">
-			<label for="userpwd">동</label> <input type="text"
-				class="form-control" id="aptName" value="아남1" name="aptName"
-				placeholder="아파트명">
-		</div>
-
-		<div class="form-group text-center">
-			<button type="button" id="searchAptBtn"
-				class="btn btn-outline-primary">조회</button>
-		</div>
-	</form>
-		<!-- 카카오 지도 넣을 자리  -->
-		<div class="row">
-			<div clsass=".col-sm-8">
-				<h3>아파트로 검색</h3>
-				<div class="table table-striped">
-					<table>
-						<tr>
-							<td>dealID</td>
-							<td>LAWD_CD</td>
-							<td>DEAL_YMD</td>
-							<td>dealAmount</td>
-							<td>buildYear</td>
-							<td>dealYear</td>
-							<td>dong</td>
-							<td>aptName</td>
-							<td>dealMonth</td>
-							<td>dealDay</td>
-							<td>area</td>
-							<td>relativeNumber</td>
-							<td>floor</td>
-						</tr>
-
-						<ul>
-							<c:forEach var="housedeal" items="${housedealInfo}">
-								<tr>
-									<td>${housedeal.dealID}</td>
-									<td>${housedeal.LAWD_CD}</td>
-									<td>${housedeal.DEAL_YMD}</td>
-									<td>${housedeal.dealAmount}</td>
-									<td>${housedeal.buildYear}</td>
-									<td>${housedeal.dealYear}</td>
-									<td>${housedeal.dong}</td>
-									<td>${housedeal.aptName}</td>
-									<td>${housedeal.dealMonth}</td>
-									<td>${housedeal.dealDay}</td>
-									<td>${housedeal.area}</td>
-									<td>${housedeal.relativeNumber}</td>
-									<td>${housedeal.floor}</td>
-								</tr>
-							</c:forEach>
-						</ul>
-					</table>
-				</div>
-			</div>
-
-			<div clsass=".col-sm-4">
-				<div id="map"></div>
-				<h3>지역 검색</h3>
-				<div class="table table-striped">
-					<table>
-						<tr>
-							<td>dealID</td>
-							<td>LAWD_CD</td>
-							<td>DEAL_YMD</td>
-							<td>dealAmount</td>
-							<td>buildYear</td>
-							<td>dealYear</td>
-							<td>dong</td>
-							<td>aptName</td>
-							<td>dealMonth</td>
-							<td>dealDay</td>
-							<td>area</td>
-							<td>relativeNumber</td>
-							<td>floor</td>
-						</tr>
-
-						<ul>
-							<c:forEach var="housedeal" items="${housedealInfo}">
-								<tr>
-									<td>${housedeal.dealID}</td>
-									<td>${housedeal.LAWD_CD}</td>
-									<td>${housedeal.DEAL_YMD}</td>
-									<td>${housedeal.dealAmount}</td>
-									<td>${housedeal.buildYear}</td>
-									<td>${housedeal.dealYear}</td>
-									<td>${housedeal.dong}</td>
-									<td>${housedeal.aptName}</td>
-									<td>${housedeal.dealMonth}</td>
-									<td>${housedeal.dealDay}</td>
-									<td>${housedeal.area}</td>
-									<td>${housedeal.relativeNumber}</td>
-									<td>${housedeal.floor}</td>
-								</tr>
-							</c:forEach>
-						</ul>
-					</table>
-				</div>
+<main id="main">
+	<!-- ======= Breadcrumbs Section ======= -->
+	<div class="container">
+	<section class="breadcrumbs">
+		<div class="container">
+			<div class="d-flex justify-content-between align-items-center">
+				<h2>실거래가 조회</h2>
+				<ol>
+					<li><a href="index.html">Home</a></li>
+					<li>실거래가 조회</li>
+				</ol>
 			</div>
 		</div>
-		
-		<!-- End Portfolio Details Section -->
-	</main>
+	</section>
+	</div>
+	<!-- Breadcrumbs Section -->
 
-	<!-- End #main -->
-
-	<!-- ======= Footer ======= -->
-	<footer id="footer">
-		<div class="footer-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-4 col-md-6">
-						<div class="footer-info">
-							<h3>HappyHouse</h3>
-							<p class="pb-3">
-								<em>후회없는 삶을 살자</em>
-							</p>
-							<p>
-								싸피광역시 싸피동 11-11, 대한민국<br /> <br /> <strong>Phone:</strong>
-								5959-5959<br /> <strong>Email:</strong>
-								contact@happyhouse.co.kr<br />
-							</p>
-							<div class="social-links mt-3">
-								<a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> <a
-									href="#" class="facebook"><i class="bx bxl-facebook"></i></a> <a
-									href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-								<a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-								<a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-3 mx-4 col-md-6 footer-links">
-						<h4>Useful Links</h4>
-						<ul class="divided-list list-unstyled text-center">
-							<li><i class="bx bx-chevron-right"></i> <a
-								href="index.html#hero">Home</a></li>
-							<li><i class="bx bx-chevron-right"></i> <a
-								href="index.html#services">회사 소개</a></li>
-							<li><i class="bx bx-chevron-right"></i> <a
-								href="index.html#contact">고객센터</a></li>
-							<li><i class="bx bx-chevron-right"></i> <a
-								href="notice.html">공지사항</a></li>
-							<li><i class="bx bx-chevron-right"></i> <a
-								href="sitemap.html">사이트맵</a></li>
-						</ul>
-					</div>
-
-					<div class="col-lg-3 col-md-6 footer-links">
-						<h4>서비스들</h4>
-						<ul class="divided-list list-unstyled text-center">
-							<li><i class="bx bx-chevron-right"></i> <a
-								href="findTransaction.html">주택 실거래가 조회</a></li>
-							<li><i class="bx bx-chevron-right"></i> <a
-								href="registerInterest.html">관심 지역 등록</a></li>
-							<li><i class="bx bx-chevron-right"></i> <a
-								href="interest.html">주변탐방 업종 정보 조회</a></li>
-							<li><i class="bx bx-chevron-right"></i> <a
-								href="findHospital.html">안심병원 조회</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
+	<!-- ======= Portfolio Details Section ======= -->
 
 		<div class="container">
-			<div class="copyright">
-				&copy; Copyright <strong><span>Squadfree</span></strong>. All Rights
-				Reserved
+		<div class="login-page col-sm-8">
+			<div class="form">
+				<form id="transactionForm" name="transactionForm" class="search-form">
+
+					<input type="hidden" name="act" id="act" value="searchByApt">
+					<div class="form-group">
+						<label >아파트 명</label> <input type="text"
+							class="form-control" id="aptName" value="아남1" name="aptName"
+							placeholder="아파트명">
+					</div>
+					<button id="searchBtn" class="btn btn-outline-primary" type="button">검색</button>
+
+				</form>
 			</div>
-			<div class="credits">
-				<!-- All the links in the footer should remain intact. -->
-				<!-- You can delete the links only if you purchased the pro version. -->
-				<!-- Licensing information: https://bootstrapmade.com/license/ -->
-				<!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/ -->
-				Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+		</div>	
+	</div>
+
+
+
+	<div class="row">
+		<div class="col-sm-4">
+			<h3>지역 검색</h3>
+			<div class="table table-striped">
+				<table>
+				<thead id = "storeinfo-thead"></thead>
+				<tbody id="storeinfo-tbody"></tbody>
+				
+				</table>
 			</div>
 		</div>
-	</footer>
-	<!-- End Footer -->
+		<div id="map" class="col-sm-8 my-5"></div>
+	
+	</div>
 
-	<a href="#"
-		class="back-to-top d-flex align-items-center justify-content-center"><i
-		class="bi bi-arrow-up-short"></i></a>
+	<!-- End Portfolio Details Section -->
+</main>
 
-	<!-- Vendor JS Files -->
-	<script src="assets/vendor/purecounter/purecounter.js"></script>
-	<script src="assets/vendor/aos/aos.js"></script>
-	<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-	<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-	<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-	<script src="assets/vendor/php-email-form/validate.js"></script>
-
-	<script type="text/javascript"
-		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5604814141adf4eb08f174929c528f6e&libraries=services"></script>
-	<!-- Template Main JS File -->
-	<script src="assets/js/custom.js"></script>
-	<script src="assets/js/hangjungdong.js"></script>
-	<script src="assets/js/login.js"></script>
-	<script src="assets/js/main.js"></script>
-	<script src="assets/js/myPage.js"></script>
-	<script src="assets/js/notice.js"></script>
-	<script src="assets/js/register.js"></script>
-	<script src="assets/js/registerInterest.js"></script>
-	<script src="assets/js/test2.js"></script>
-	<script src="assets/js/interest.js"></script>
-</body>
-</html>
+<!-- End #main -->
+<%@ include file="footer.jsp"%>

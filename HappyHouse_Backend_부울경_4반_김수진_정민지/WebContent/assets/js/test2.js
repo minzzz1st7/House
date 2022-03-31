@@ -50,6 +50,27 @@ $(document).ready(function () {
     var dong = $("#dong option:selected").val();
     var dongCode = sido + sigugun + dong + "00";
   });
+  
+  $("#registerInterestBtn").click(function (){
+	  var sido = $("#sido option:selected").val();
+	    var sigugun = $("#sigugun option:selected").val();
+	    var dong = $("#dong option:selected").val();
+	    var areaName = $("#sido option:selected").text()
+	    +" " +$("#sigugun option:selected").text()
+	    +" " +$("#dong option:selected").text();
+//	    var dongCode = sido + sigugun + dong + "00";
+	    $.ajax({
+        	url: 'interest',
+        	data: {'act': 'insertInterest', 'sidoCode': sido, 'sigugunCode': sigugun,'dongCode': dong,'areaName': areaName},
+          	dataType: 'text',
+          	success: function (response) {
+            	var cnt = parseInt(response);
+            	if(cnt == 0) {
+            		alert("등록완료했습니다.")
+            	} 
+          	}
+		});
+  });
 });
 
 function fn_option(code, name) {

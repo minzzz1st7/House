@@ -14,12 +14,49 @@ public class HouseDealDto {
 	private String dealDay;
 	private String area;
 	private String relativeNumber;
+	private String roadName;
+	private String jiBun;
+	private String bunCode;
+	private String buBunCode;
+	private String guGunCode;
+	public String getBunCode() {
+		return bunCode;
+	}
+	public void setBunCode(String bunCode) {
+		this.bunCode = bunCode;
+	}
+	public String getBuBunCode() {
+		return buBunCode;
+	}
+	public void setBuBunCode(String buBunCode) {
+		this.buBunCode = buBunCode;
+	}
+	public String getGuGunCode() {
+		return guGunCode;
+	}
+	public void setGuGunCode(String guGunCode) {
+		this.guGunCode = guGunCode;
+	}
+
+    public String getRoadName() {
+		return roadName;
+	}
+	public void setRoadName(String roadName) {
+		this.roadName = roadName;
+	}
+	public String getJiBun() {
+		return jiBun;
+	}
+	public void setJiBun(String jiBun) {
+		this.jiBun = jiBun;
+	}
 	@Override
 	public String toString() {
-		return "HouseDto [dealID=" + dealID + ", LAWD_CD=" + LAWD_CD + ", DEAL_YMD=" + DEAL_YMD + ", dealAmount="
+		return "HouseDealDto [dealID=" + dealID + ", LAWD_CD=" + LAWD_CD + ", DEAL_YMD=" + DEAL_YMD + ", dealAmount="
 				+ dealAmount + ", buildYear=" + buildYear + ", dealYear=" + dealYear + ", dong=" + dong + ", aptName="
 				+ aptName + ", dealMonth=" + dealMonth + ", dealDay=" + dealDay + ", area=" + area + ", relativeNumber="
-				+ relativeNumber + ", floor=" + floor + "]";
+				+ relativeNumber + ", roadName=" + roadName + ", jiBun=" + jiBun + ", bunCode=" + bunCode
+				+ ", buBunCode=" + buBunCode + ", guGunCode=" + guGunCode + ", floor=" + floor + "]";
 	}
 	private String floor;
 	public int getDealID() {

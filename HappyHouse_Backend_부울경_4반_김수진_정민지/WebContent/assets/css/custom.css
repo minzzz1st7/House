@@ -80,9 +80,9 @@
 }
 
 .bottom-text {
-  margin-top: 30px;
+
   text-align: center;
-  font-size: 13px;
+  font-size: 12px;
 }
 .bottom-text a {
   display: inline;
@@ -200,10 +200,16 @@ select option {
 .text-input {
   width: 150px;
   height: 35px;
-  background: white;
+  backgroundz: white;
   background-size: 20px;
   padding: 2px 30px 2px 10px;
   border-radius: 3px;
   outline: 0 none;
   margin: 4px;
+}
+
+#error-msg {
+	color: red;
+	padding: 10px 0 0px;
+	font-size: 13px;
 }
