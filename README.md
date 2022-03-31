@@ -209,25 +209,22 @@ DBUtil
 <img src = "/uploads/84e246a1b9bc7777313cd2902bb0924d/image.png" width="600" height="300"/>
 
 #### 2. 게시글을 등록할 수 있습니다.
-
-
--> **게시글 등록 화면**
 - Noticeinsert
-<img src = "/uploads/c19b0ccbc114183b8c1f450ecbe7eccc/image.png" width="600" height="300"/>
+![image](/uploads/84e246a1b9bc7777313cd2902bb0924d/image.png)
 
 #### 3. 제목을 누르면 게시글 확인 할 수 있습니다. 
-<img src = "/uploads/1dec8fa334faa945c8d7ac8e28f250c9/image.png" width="600" height="300"/>
+
+![image](/uploads/d1d1e642a2f04dec766455c6d5290b91/image.png)
 
 
 #### 4. 게시글을 삭제할 수 있습니다. 
 - Noticedelete
-<img src = "/uploads/1dec8fa334faa945c8d7ac8e28f250c9/image.png" width="600" height="300"/>
+![image](/uploads/1dec8fa334faa945c8d7ac8e28f250c9/image.png)
 
 #### 5. 게시글을 수정할 수 있습니다.
 
 ->**글 수정화면**
 - Noticeupdate
-<img src = "uploads/afdadb8a88e43a6f60d4dadad04711f9/image.png" width="600" height="300"/>
-
+![image](/uploads/afdadb8a88e43a6f60d4dadad04711f9/image.png)
 
 
