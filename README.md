@@ -81,10 +81,9 @@
 
 - findpwd
 
-![image-20220331104703194](수진 리드미.assets/image-20220331104703194.png)
+![image-20220331104028044](/uploads/20222558c5956a1331f508d83d2dfa6a/image-20220331104028044.png)
 
-<img src="asset/image-20220331104719409.png" alt="image-20220331104719409" style="zoom:33%;" />
-
+![image-20220331104104573](/uploads/0ce1ac4ffdd8f3cca947cd7f281711a7/image-20220331104104573.png)
 
 
 #### 6. 메인화면
@@ -192,21 +191,48 @@ DBUtil
 
 ### 공지사항
 
-##### 메뉴에서 공지사항을 클릭하면 게시글 목록이 뜹니다.
+#### - act
 
+1. 이동
+
+   - myNotice : 공지 목록 창으로 이동
+
+   - NoticeinsertForm : 게시 글 등록 창으로 이동
+
+   - myAddNotice : 공지 목록 창으로 이동
+
+
+2. 동작
+
+   - selctAll : 모든 게시글을 불러오기
+   - Noticeinsert : 글 제목과 내용을 등록
+   - view : 글 제목을 클릭하면 게시글 ID와 일치하는 게시글 제목, 내용 불러오기
+   - Noticeupdate: 게시글 수정하기
+   - Noticedelete: 게시글ID 와 일치하는 게시글 찾아서 삭세하기
+ 
+
+#### 1. 메뉴에서 공지사항을 클릭하면 게시글 목록이 뜹니다.
+
+- myNotice
 <img src = "/uploads/435942be056ea9e1df70317789d0744b/image.png" width="600" height="300"/>
+#### 2. 게시글을 등록할 수 있습니다.
+- Noticeinsert
+
+<img src = "/uploads/cd5059646917fedbea2a3aeafe0ebe25/image.png" width="600" height="300"/>
+
+#### 3. 게시글을 삭제할 수 있습니다. 
 
 
-##### 게시글을 등록할 수 있습니다.
+
+##### 
 : 제목과 내용을 입력하면, 입력된 정보와 글번호, 작성자, 현재 날짜(글 등록일)가 데이터베이스에 추가됩니다.
 
 <img src = "/uploads/c19b0ccbc114183b8c1f450ecbe7eccc/image.png" width="600" height="300"/>
 
 ##### 게시글을 등록하면 게시글 목록에서 확인할 수 있습니다. 
 
-<img src = "/uploads/cd5059646917fedbea2a3aeafe0ebe25/image.png" width="600" height="300"/>
 
-##### 글을 삭제할 수 있습니다. 
+##### 
 <img src = "/uploads/b0709c781c497bfa2b3987bab0cfb9fe/image.png" width="600" height="300"/>
 
 
