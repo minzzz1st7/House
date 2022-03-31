@@ -180,6 +180,16 @@ DBUtil
 
 ![image-20220331110359086](/uploads/0ddcbb2e5ae5aa09213ca0b56154bac0/image-20220331110359086.png)
 
+## 아파트 실거래가 검색
+#### 1. 아파트 실거래가 동으로 검색
+
+![image](/uploads/207978012c16c94c65401916f44cfb0a/image.png)
+
+#### 2. 아파트 실거래가 아파트 주소로 검색
+
+![image](/uploads/62bdbd4a13bf4823c52de2e370da44c5/image.png)
+
+
 
 
 ## 공지사항 (/Notice)
