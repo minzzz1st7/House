@@ -38,9 +38,10 @@
 
 - register, idcheck
 
-![image-20220331102651146](asset/image-20220331102651146.png)
+![image-20220331102651146](/uploads/bd41df37a5f473674e121ee4f61a1960/image-20220331102651146.png)
 
-![image-20220331103457593](수진 리드미.assets/image-20220331103457593.png)
+![image-20220331103457593](/uploads/962a0369a1014ede81dece32ac0e2a47/image-20220331103457593.png)
+
 
 
 
@@ -50,7 +51,7 @@
 
 - findpwd
 
-![image-20220331103636990](수진 리드미.assets/image-20220331103636990.png)
+![image-20220331103636990](/uploads/ac7d9853453acd2c677c1a50a1bb3d62/image-20220331103636990.png)
 
 
 
@@ -58,7 +59,7 @@
 
 - login, logout
 
-![image-20220331104028044](수진 리드미.assets/image-20220331104028044.png)
+![image-20220331104028044](/uploads/20222558c5956a1331f508d83d2dfa6a/image-20220331104028044.png)
 
 
 
@@ -68,9 +69,9 @@
 
 - userinfo, modify, delete
 
-![image-20220331104104573](수진 리드미.assets/image-20220331104104573.png)
+![image-20220331104104573](/uploads/0ce1ac4ffdd8f3cca947cd7f281711a7/image-20220331104104573.png)
 
-![image-20220331104440549](수진 리드미.assets/image-20220331104440549.png)
+![image-20220331104440549](/uploads/357d56ebb2e6a19abc3f516ffece3374/image-20220331104440549.png)
 
 
 
@@ -88,15 +89,15 @@
 
 #### 6. 메인화면
 
-![image-20220331110359086](수진 리드미.assets/image-20220331110359086.png)
+![image-20220331110512493](/uploads/34b6c087e3eaee3d9a9f8dfd006b7a7d/image-20220331110512493.png)
 
 - 로그인 유무에 따라 해당 내용이 달라짐.
 
-![image-20220331110423975](수진 리드미.assets/image-20220331110423975.png)
+![image-20220331110423975](/uploads/a8ec8a41bfba8f725ecf3593b08b2c78/image-20220331110423975.png)
 
 - 반응형 웹
 
-![image-20220331110613022](수진 리드미.assets/image-20220331110613022.png)
+![image-20220331110359086](/uploads/0ddcbb2e5ae5aa09213ca0b56154bac0/image-20220331110359086.png)
 
 
 
