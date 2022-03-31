@@ -217,22 +217,25 @@ DBUtil
 <img src = "/uploads/435942be056ea9e1df70317789d0744b/image.png" width="600" height="300"/>
 
 #### 2. 게시글을 등록할 수 있습니다.
-- Noticeinsert
 
--> 게시글 등록 화면
+
+-> **게시글 등록 화면**
+- Noticeinsert
 <img src = "/uploads/c19b0ccbc114183b8c1f450ecbe7eccc/image.png" width="600" height="300"/>
 
--> 게시글 등록 후 목록 화면
+
+->**게시글 등록 후 목록 화면**
 <img src = "/uploads/cd5059646917fedbea2a3aeafe0ebe25/image.png" width="600" height="300"/>
 
 #### 3. 게시글을 삭제할 수 있습니다. 
 - Noticedelete
-
 <img src = "/uploads/b0709c781c497bfa2b3987bab0cfb9fe/image.png" width="600" height="300"/>
 
 #### 4. 게시글을 수정할 수 있습니다.
-- Noticeupdate
+
+
 ->**글 수정화면**
+- Noticeupdate
 <img src = "/uploads/7eba9bf7c56db155585e30b7bb3286d7/image.png" width="600" height="300"/>
 
 ->**수정 후 변경된 목록 화면**
