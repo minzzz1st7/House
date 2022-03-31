@@ -204,18 +204,16 @@ DBUtil
  
 
 #### 1. 메뉴에서 공지사항을 클릭하면 게시글 목록이 뜹니다.
-
 - myNotice
-<img src = "/uploads/84e246a1b9bc7777313cd2902bb0924d/image.png" width="600" height="300"/>
+![image](/uploads/28e0cab6257e247b04679bbb81fb9e0f/image.png)
 
 #### 2. 게시글을 등록할 수 있습니다.
 - Noticeinsert
-![image](/uploads/d1d1e642a2f04dec766455c6d5290b91/image.png)
+![image](/uploads/e7aff4ee71291e3a314dc3ed155837c6/image.png)
 
 #### 3. 제목을 누르면 게시글 확인 할 수 있습니다. 
 
-![image](/uploads/9b0e588a6daf60591329c36327dfc777/image.png)
-
+![image](/uploads/999eb4dfbdd765010c95d480afc7d61e/image.png)
 
 
 #### 4. 게시글을 삭제할 수 있습니다. 
@@ -225,6 +223,6 @@ DBUtil
 #### 5. 게시글을 수정할 수 있습니다.
 - Noticeupdate
 
-![image](/uploads/afdadb8a88e43a6f60d4dadad04711f9/image.png)
+![image](/uploads/dc0867c2ce456f5a8a3ac0f22374d640/image.png)
 
 
