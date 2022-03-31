@@ -183,12 +183,7 @@ DBUtil
 
 
 
-## userInterest (/interest)
-
-
-
-### 공지사항
-
+## 공지사항 (/Notice)
 #### - act
 
 1. 이동
