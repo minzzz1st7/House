@@ -155,57 +155,57 @@
 
 <main id="main">
 	<!-- ======= Breadcrumbs Section ======= -->
-	<div class="container">
 	<section class="breadcrumbs">
 		<div class="container">
 			<div class="d-flex justify-content-between align-items-center">
 				<h2>실거래가 조회</h2>
 				<ol>
-					<li><a href="index.html">Home</a></li>
+					<li><a href="index.jsp">Home</a></li>
 					<li>실거래가 조회</li>
 				</ol>
 			</div>
 		</div>
 	</section>
-	</div>
 	<!-- Breadcrumbs Section -->
 
 	<!-- ======= Portfolio Details Section ======= -->
 
 		<div class="container">
-		<div class="login-page col-sm-8">
+		<div class="login-page">
 			<div class="form">
 				<form id="transactionForm" name="transactionForm" class="search-form">
 
 					<input type="hidden" name="act" id="act" value="searchByApt">
 					<div class="form-group">
 						<label >아파트 명</label> <input type="text"
-							class="form-control" id="aptName" value="아남1" name="aptName"
+							class="form-control" id="aptName" name="aptName"
 							placeholder="아파트명">
 					</div>
+					<div class="mt-3">
 					<button id="searchBtn" class="btn btn-outline-primary" type="button">검색</button>
+					</div>
 
 				</form>
 			</div>
 		</div>	
-	</div>
-
-
-
-	<div class="row">
-		<div class="col-sm-4">
-			<h3>지역 검색</h3>
-			<div class="table table-striped">
-				<table>
-				<thead id = "storeinfo-thead"></thead>
-				<tbody id="storeinfo-tbody"></tbody>
-				
-				</table>
+		<div class="row">
+			<div class="col-sm-4">
+				<h3 class="apart_list_title my-5">지역 검색</h3>
+				<div>
+					<table class="table table-striped">
+					<thead id = "storeinfo-thead"></thead>
+					<tbody id="storeinfo-tbody"></tbody>
+					
+					</table>
+				</div>
 			</div>
+			<div id="map" class="col-sm-8 my-5"></div>
+		
 		</div>
-		<div id="map" class="col-sm-8 my-5"></div>
-	
 	</div>
+
+
+
 
 	<!-- End Portfolio Details Section -->
 </main>

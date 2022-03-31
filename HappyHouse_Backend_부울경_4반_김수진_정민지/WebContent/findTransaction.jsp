@@ -11,7 +11,7 @@
    location.href = "${root}/index.jsp";
    </script>
 </c:if> 
-
+ 
 
 <script type="text/javascript">
 			$(document)
@@ -69,6 +69,8 @@
 							});
 						}
 					}
+					
+
 
 					$("#searchBtn").click(function () {
 						let roadNameList = []; 
@@ -255,7 +257,7 @@
 			<div class="d-flex justify-content-between align-items-center">
 				<h2>실거래가 조회</h2>
 				<ol>
-					<li><a href="index.html">Home</a></li>
+					<li><a href="index.jsp">Home</a></li>
 					<li>실거래가 조회</li>
 				</ol>
 			</div>
@@ -288,10 +290,23 @@
 
 					<button id="searchBtn" class="btn btn-outline-primary" type="button">검색</button>
 					<!-- <a id="listBtn2" class="search-element" type="button">검색</button> -->
-
+					
 				</form>
+
 			</div>
 		</div>
+		<div class="row">
+		<div class="col-sm-4">
+			<h3 class="apart_list_title my-5">지역 검색</h3>
+			<div >
+				<table class="table table-striped">
+				<thead id = "storeinfo-thead"></thead>
+				<tbody id="storeinfo-tbody"></tbody>
+				</table>
+			</div>
+		</div>
+		<div id="map" class="col-sm-8 my-5"></div>
+	</div> 
 	</div>
 	
 	  <!--       <div class="row">
@@ -302,18 +317,7 @@
           <div id="map" class="col-sm-8 my-5"></div>
         </div> -->
 	
-	<div class="row">
-		<div class="col-sm-4">
-			<h3>지역 검색</h3>
-			<div class="table table-striped">
-				<table>
-				<thead id = "storeinfo-thead"></thead>
-				<tbody id="storeinfo-tbody"></tbody>
-				</table>
-			</div>
-		</div>
-		<div id="map" class="col-sm-8 my-5"></div>
-	</div> 
+	
 	
 
 	<!-- End Portfolio Details Section -->

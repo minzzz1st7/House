@@ -9,7 +9,7 @@ public class DBUtil {
    private final String dbName="back_pjt"; //back_pjt
    private final String url = "jdbc:mysql://127.0.0.1:3306/"+dbName+"?serverTimezone=UTC";
    private final String user = "ssafy";
-   private final String pass = "ssafy1234";
+   private final String pass = "12345";
 
    private static DBUtil instance = new DBUtil();
 

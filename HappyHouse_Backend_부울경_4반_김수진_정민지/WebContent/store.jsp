@@ -18,7 +18,7 @@
 			<div class="d-flex justify-content-between align-items-center">
 				<h2>관심 지역 상권 조회</h2>
 				<ol>
-					<li><a href="index.html">Home</a></li>
+					<li><a href="index.jsp">Home</a></li>
 					<li>관심 지역 상권 조회</li>
 				</ol>
 			</div>

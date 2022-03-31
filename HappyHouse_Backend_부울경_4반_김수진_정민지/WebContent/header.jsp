@@ -149,7 +149,16 @@
             <li><a class="nav-link scrollto" href="index.jsp">Home</a></li>
             <li><a class="nav-link scrollto" href="index.jsp#services">회사 소개</a></li>
             <li><a class="nav-link scrollto loginOnly" href="${root}/NoticeMain2?act=selectAll">공지사항</a></li>
-            <li><a class="nav-link scrollto loginOnly" href="findTransaction.jsp">주택실거래가조회</a></li>
+            <!-- <li><a class="nav-link scrollto loginOnly" href="findTransaction.jsp">주택실거래가조회</a></li> -->
+            <li class="dropdown loginOnly">
+              <a href="houseDeal?act=goPage">
+                ><span>실거래가 조회</span> <i class="bi bi-chevron-down"></i
+              ></a>
+              <ul>
+                <li><a href="houseDeal?act=goPage">동별 주택 실거래가 조회</a></li>
+                <li><a href="houseDeal?act=goPageApt">아파트별 주택 실거래가 조회</a></li>
+                            </ul>
+            </li>
             <!-- 로그인 안 한 상태 inactive -->
             <li class="dropdown loginOnly">
               <a href="main?act=store&cmd=mvInterest"

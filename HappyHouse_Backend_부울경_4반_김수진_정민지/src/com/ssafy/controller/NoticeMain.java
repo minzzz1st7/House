@@ -31,8 +31,13 @@ public class NoticeMain extends HttpServlet {
 		
 		String action = request.getParameter("act");
 		System.out.println("action을 찍어줘 ~~ : "+ action);
-		
+		String path="";
 		switch(action){
+		case "goPage":
+			path = "/notice.jsp";
+			response.sendRedirect(request.getContextPath()+path);
+			break;
+			
 			case "mvNotice": System.out.println("공지사항");response.sendRedirect(request.getContextPath() + "/notice.jsp"); break;
 			case "mvAddNotice": selectAll(request, response); break;
 			case "selectAll": selectAll(request, response); break;

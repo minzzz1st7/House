@@ -45,8 +45,13 @@ public class HouseDealServlet extends HttpServlet {
 //			request.getRequestDispatcher(path).forward(request, response);
 		}
 		
-		else{
-			System.out.println("test");
+		else if("goPage".equals(act)){			path = "/findTransaction.jsp";
+			request.getRequestDispatcher(path).forward(request, response);
+		}
+		
+		else if("goPageApt".equals(act)){
+			path = "/findTransactionApt.jsp";
+			request.getRequestDispatcher(path).forward(request, response);
 		}
 	}
 	

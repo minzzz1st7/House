@@ -15,7 +15,7 @@
           <div class="d-flex justify-content-between align-items-center">
             <h2>관심지역 등록</h2>
             <ol>
-              <li><a href="index.html">Home</a></li>
+              <li><a href="index.jsp">Home</a></li>
               <li>관심지역 등록</li>
             </ol>
           </div>

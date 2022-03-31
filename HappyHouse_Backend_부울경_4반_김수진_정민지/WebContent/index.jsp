@@ -29,7 +29,7 @@
 
           <div class="row">
             <div
-              onclick="location.replace('houseDeal?act=searchByRegion')"
+              onclick="location.replace('houseDeal?act=goPage')"
               class="company-button col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0"
             >
               <div class="icon-box" data-aos="fade-up">
