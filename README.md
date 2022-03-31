@@ -220,8 +220,7 @@ DBUtil
 
 #### 4. 게시글을 삭제할 수 있습니다. 
 - Noticedelete
-
-![image](/uploads/1dec8fa334faa945c8d7ac8e28f250c9/image.png)
+![image](/uploads/9d51bade82b3d333de55daefaa5ae5ca/image.png)
 
 #### 5. 게시글을 수정할 수 있습니다.
 - Noticeupdate
