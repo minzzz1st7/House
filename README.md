@@ -232,10 +232,10 @@ DBUtil
 
 #### 4. 게시글을 수정할 수 있습니다.
 - Noticeupdate
--> 글 수정 화면
+->**글 수정화면**
 <img src = "/uploads/7eba9bf7c56db155585e30b7bb3286d7/image.png" width="600" height="300"/>
 
--> 수정 후 변경된 목록 화면
+->**수정 후 변경된 목록 화면**
 <img src = "/uploads/5e976a8d8ec988d39791a21f2c530ae4/image.png" width="600" height="300"/>
 
 
