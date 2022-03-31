@@ -210,21 +210,22 @@ DBUtil
 
 #### 2. 게시글을 등록할 수 있습니다.
 - Noticeinsert
-![image](/uploads/84e246a1b9bc7777313cd2902bb0924d/image.png)
+![image](/uploads/d1d1e642a2f04dec766455c6d5290b91/image.png)
 
 #### 3. 제목을 누르면 게시글 확인 할 수 있습니다. 
 
-![image](/uploads/d1d1e642a2f04dec766455c6d5290b91/image.png)
+![image](/uploads/9b0e588a6daf60591329c36327dfc777/image.png)
+
 
 
 #### 4. 게시글을 삭제할 수 있습니다. 
 - Noticedelete
+
 ![image](/uploads/1dec8fa334faa945c8d7ac8e28f250c9/image.png)
 
 #### 5. 게시글을 수정할 수 있습니다.
-
-->**글 수정화면**
 - Noticeupdate
+
 ![image](/uploads/afdadb8a88e43a6f60d4dadad04711f9/image.png)
 
 
