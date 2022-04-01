@@ -1,7 +1,8 @@
 #### 실행 전 환경설정
 
 1. sql 파일로 db 구축
-2. util.java 에서 mySQL 설정 수정
+2. util.java 에서 mySQL 설정 
+2. `HappyHouse_Backend_부울경_4반_김수진_정민지` 압축버전과 폴더 중 선택하여 실행
 
 
 
